@@ -1,0 +1,23 @@
+{
+  "name": "affordable-housing-project",
+  "version": "1.0.0",
+  "description": "This project is about Finding Safe, Verified and Affordable Homes Easily.it aims to solve Fake listings,Unclear rent prices,Time wasted on bad houses,No easy comparison;by enabling Search by budget,Verified listings ,Compare houses,Reviews from tenants",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preciousmaina-2007/Affordable-Housing-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preciousmaina-2007/Affordable-Housing-Project/issues"
+  },
+  "homepage": "https://github.com/preciousmaina-2007/Affordable-Housing-Project#readme",
+  "dependencies": {
+    "jest": "^30.3.0"
+  }
+}

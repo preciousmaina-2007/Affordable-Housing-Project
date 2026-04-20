@@ -1,7 +1,4 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
-* {
+global style{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,10 +10,6 @@ body {
     color: #333;
     line-height: 1.6;
 }
-
-/* =========================
-   NAVBAR
-========================= */
 nav {
     background: #0d6efd;
     padding: 15px 25px;
@@ -54,28 +47,18 @@ nav a {
 nav a:hover {
     background: rgba(255,255,255,0.2);
 }
-
-/* =========================
-   PAGE HEADINGS
-========================= */
 h1, h2 {
     text-align: center;
     margin: 20px 0;
     color: #0d6efd;
 }
 
-/* =========================
-   CONTAINER
-========================= */
 .container {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
 }
 
-/* =========================
-   CARDS (LISTINGS)
-========================= */
 .results {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -95,9 +78,6 @@ h1, h2 {
     transform: translateY(-5px);
 }
 
-/* =========================
-   FORMS (MODERN LOOK)
-========================= */
 .form-container {
     display: flex;
     justify-content: center;
@@ -128,9 +108,6 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 3px rgba(13,110,253,0.2);
 }
 
-/* =========================
-   BUTTONS
-========================= */
 button {
     width: 100%;
     padding: 12px;
@@ -147,18 +124,11 @@ button:hover {
     background: #157347;
     transform: scale(1.02);
 }
-
-/* =========================
-   SMALL TEXT / RESPONSES
-========================= */
 p {
     text-align: center;
     margin-top: 10px;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;

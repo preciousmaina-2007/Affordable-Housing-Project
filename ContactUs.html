@@ -4,6 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ContactUs</title>
+    <style>
+        .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.contact-box {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* Title */
+.contact-box h2 {
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.contact-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+.contact-box input:focus,
+.contact-box textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.2);
+    outline: none;
+}
+
+/* Textarea height */
+.contact-box textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Button (reuse green theme) */
+.contact-box button {
+    width: 100%;
+    padding: 12px;
+    background: #198754;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-box button:hover {
+    background: #157347;
+    transform: scale(1.02);
+}
+
+/* Response message */
+#contactResponse {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #198754;
+}
+    </style>
 </head>
 <body>
 <nav></nav>

@@ -78,10 +78,8 @@ document.getElementById("filterForm")?.addEventListener("submit", function(e){
     const result = filterListings(price, location, bedrooms);
     displayListings(result);
 });
-
-
 // ===============================
-// 🏠 LANDLORD LISTING FORM
+//LANDLORD ADD LISTING FORM
 // ===============================
 document.getElementById("listingForm")?.addEventListener("submit", function(e){
     e.preventDefault();
@@ -99,8 +97,6 @@ document.getElementById("listingForm")?.addEventListener("submit", function(e){
 
     this.reset();
 });
-
-
 // ===============================
 // 📞 CONTACT FORM
 // ===============================

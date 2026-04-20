@@ -9,35 +9,7 @@ let listings = [
 
 
 // ===============================
-// 🎯 FILTER LOGIC (TESTABLE)
-// ===============================
-function filterListings(maxPrice, location, bedrooms, data = listings) {
-    return data.filter(l =>
-        l.rent <= maxPrice &&
-        (location === "" || l.address.toLowerCase().includes(location.toLowerCase())) &&
-        (bedrooms === "" || l.bedrooms == bedrooms)
-    );
-}
-
-
-// ===============================
-// 🏠 ADD LISTING LOGIC (TESTABLE)
-// ===============================
-function addListing(data, newListing) {
-    const listing = {
-        address: newListing.address,
-        rent: Number(newListing.rent),
-        bedrooms: Number(newListing.bedrooms),
-        updatedAt: new Date().toISOString().split("T")[0]
-    };
-
-    data.push(listing);
-    return listing;
-}
-
-
-// ===============================
-// 🖥 DISPLAY LISTINGS (UI ONLY)
+// 🏠 DISPLAY LISTINGS
 // ===============================
 function displayListings(data) {
     const container = document.getElementById("results");
@@ -66,76 +38,94 @@ function displayListings(data) {
 
 
 // ===============================
-// 🎛 FILTER FORM EVENT
+// 🎯 FILTER FUNCTION (TESTABLE)
 // ===============================
-const filterForm = document.getElementById("filterForm");
-
-if (filterForm) {
-    filterForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const price = Number(document.getElementById("price").value);
-        const location = document.getElementById("location").value;
-        const bedrooms = document.getElementById("bedrooms").value;
-
-        const result = filterListings(price, location, bedrooms);
-        displayListings(result);
-    });
+function filterListings(maxPrice, location, bedrooms, data = listings) {
+    return data.filter(l =>
+        l.rent <= maxPrice &&
+        (location === "" || l.address.toLowerCase().includes(location.toLowerCase())) &&
+        (bedrooms === "" || l.bedrooms == bedrooms)
+    );
 }
 
 
 // ===============================
-// 🏠 ADD LISTING FORM EVENT
+// 🏠 ADD LISTING FUNCTION (TESTABLE)
 // ===============================
-const listingForm = document.getElementById("listingForm");
+function addListing(data, newListing) {
+    const listing = {
+        address: newListing.address,
+        rent: Number(newListing.rent),
+        bedrooms: Number(newListing.bedrooms),
+        updatedAt: new Date().toISOString().split("T")[0]
+    };
 
-if (listingForm) {
-    listingForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const newListing = {
-            address: document.getElementById("address").value,
-            rent: document.getElementById("rent").value,
-            bedrooms: document.getElementById("bedrooms").value
-        };
-
-        addListing(listings, newListing);
-
-        alert("Listing added successfully!");
-        listingForm.reset();
-    });
+    data.push(listing);
+    return listing;
 }
 
 
 // ===============================
-// 📞 CONTACT FORM EVENT
+// 🎛 FILTER FORM
 // ===============================
-const contactForm = document.getElementById("contactForm");
+document.getElementById("filterForm")?.addEventListener("submit", function(e){
+    e.preventDefault();
 
-if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+    const price = Number(document.getElementById("price").value);
+    const location = document.getElementById("location").value;
+    const bedrooms = document.getElementById("bedrooms").value;
 
-        const name = document.getElementById("name").value;
+    const result = filterListings(price, location, bedrooms);
+    displayListings(result);
+});
 
-        document.getElementById("contactResponse").innerHTML =
-            `✅ Thank you ${name}, your message has been received.`;
 
-        contactForm.reset();
-    });
-}
+// ===============================
+// 🏠 LANDLORD LISTING FORM
+// ===============================
+document.getElementById("listingForm")?.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const newListing = {
+        address: document.getElementById("address").value,
+        rent: document.getElementById("rent").value,
+        bedrooms: document.getElementById("bedrooms").value
+    };
+
+    addListing(listings, newListing);
+
+    document.getElementById("successMessage").innerText =
+        "✅ Listing added successfully!";
+
+    this.reset();
+});
+
+
+// ===============================
+// 📞 CONTACT FORM
+// ===============================
+document.getElementById("contactForm")?.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    document.getElementById("contactResponse").innerText =
+        `✅ Thank you ${name}, we received your message.`;
+
+    this.reset();
+});
 
 
 // ===============================
 // 🚀 INITIAL LOAD
 // ===============================
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     displayListings(listings);
 });
 
 
 // ===============================
-// 🧪 EXPORTS FOR TESTING (JEST)
+// 🧪 EXPORT FOR TESTING (JEST)
 // ===============================
 if (typeof module !== "undefined") {
     module.exports = {

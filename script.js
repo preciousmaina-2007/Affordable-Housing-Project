@@ -98,6 +98,16 @@ document.getElementById("listingForm")?.addEventListener("submit", function(e){
     this.reset();
 });
 // ===============================
+// 🔐 LOGIN FORM (NEW)
+// ===============================
+document.getElementById("loginForm")?.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    alert("Login successful (demo)");
+    window.location.href = "index.html";
+});
+
+// ===============================
 // 📞 CONTACT FORM
 // ===============================
 document.getElementById("contactForm")?.addEventListener("submit", function(e){

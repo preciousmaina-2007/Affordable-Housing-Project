@@ -20,24 +20,45 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1>Login</h1>
-        <form action="/login" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
+  <!-- LOGIN UI -->
+<div class="login-container">
+
+    <div class="login-box">
+
+        <!-- TITLE -->
+        <h2>Welcome Back 👋</h2>
+        <p>Login to access affordable housing listings</p>
+
+        <!-- FORM -->
+        <form id="loginForm">
+
+            <label>Username</label>
+            <input type="text" placeholder="Enter username" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" required>
+
+            <!-- REMEMBER ME -->
+            <div style="text-align:left; font-size:13px; margin-top:5px;">
+                <input type="checkbox"> Remember me
+            </div>
+
             <button type="submit">Login</button>
+
         </form>
+
+        <!-- EXTRA LINKS -->
+        <p style="margin-top:15px;">
+            Forgot password? <a href="#">Reset</a>
+        </p>
+
+        <p>
+            Don't have an account? <a href="#">Sign up</a>
+        </p>
+
     </div>
-    <div class="form-box">
-<h2>Login</h2>
-<input placeholder="Username">
-<input type="password" placeholder="Password">
-<button>Login</button>
-</div>
+
+</div>s  
 </body>
 <footer></footer>
     <p>&copy; 2023 Find Your Fit. All rights reserved.</p>

@@ -1,0 +1,294 @@
+
+/* =========================
+   🎨 COLOR SYSTEM
+========================= */
+:root {
+    --primary: #0d6efd;     /* BLUE */
+    --secondary: #16a34a;   /* GREEN */
+    --bg: #ffffff;          /* WHITE */
+    --text: #222;
+    --muted: #666;
+    --border: #e5e5e5;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+    background: var(--bg);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--border);
+}
+
+/* BRAND / LOGO */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.brand-text h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.brand-text small {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* BLUE HOVER EFFECT */
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ACTIVE LINK */
+.nav-links a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =========================
+   LISTING CARDS
+========================= */
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.results div {
+    background: var(--bg);
+    border: 1px solid var(--border);
+
+    padding: 15px;
+    border-radius: 14px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.results div:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   FORMS
+========================= */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.form-box,
+.login-box {
+    background: var(--bg);
+    width: 100%;
+    max-width: 420px;
+
+    padding: 25px;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* INPUTS */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+
+    margin: 10px 0;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+/* FOCUS (BLUE PRIMARY) */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.2);
+}
+
+/* =========================
+   BUTTONS (GREEN SECONDARY)
+========================= */
+button {
+    width: 100%;
+    padding: 12px;
+
+    background: var(--secondary);
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #12833b;
+    transform: scale(1.02);
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.contact-box {
+    background: var(--bg);
+    width: 100%;
+    max-width: 500px;
+
+    padding: 30px;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: var(--primary);
+    color: white;
+
+    text-align: center;
+    padding: 15px;
+
+    margin-top: 40px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .form-box,
+    .login-box {
+        width: 95%;
+    }
+}
+  
